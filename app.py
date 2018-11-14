@@ -1,17 +1,22 @@
 import random
 
 def random_gen():
-    rand_num = random.randint(0, 10)
+    rand_num = random.randint(1, 9)
+    msg = ""
     for turn in range(5):
         user_guess = int(input('Please guess your magic number (0-10): '))
         if user_guess < rand_num:
-            print ('Guess is too low. Try again')
+            msg = 0
+            print('Guess is too low. Try again')
         elif user_guess > rand_num:
-            print ('Guess is to high. Try again')
+            msg =  2
+            print('Guess is to high. Try again')
         elif user_guess == rand_num:
-            print ('You guessed the number right')
-            print ('Game Over')
+            msg = 1
+            print('You guessed the number right')
+            print('Game is over')
             break
         turn = turn + 1    
+    return msg
                
 random_gen()
